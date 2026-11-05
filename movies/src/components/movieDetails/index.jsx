@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Chip from "@mui/material/Chip";
+import Avatar from "@mui/material/Avatar";
 import Paper from "@mui/material/Paper";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import MonetizationIcon from "@mui/icons-material/MonetizationOn";
@@ -47,16 +48,16 @@ const MovieDetails = ({ movie }) => {
                 ))}
             </Paper>
             <Paper component="ul" sx={{ ...root }}>
-                <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
+                <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} sx={{ ...chip }} />
                 <Chip
                     icon={<MonetizationIcon />}
-                    label={`${movie.revenue.toLocaleString()}`}
+                    label={`${movie.revenue.toLocaleString()}`} sx={{ ...chip }}
                 />
                 <Chip
                     icon={<StarRate />}
-                    label={`${movie.vote_average} (${movie.vote_count})`}
+                    label={`${movie.vote_average} (${movie.vote_count})`} sx={{ ...chip }}
                 />
-                <Chip label={`Released: ${movie.release_date}`} />
+                <Chip label={`Released: ${movie.release_date}`} sx={{ ...chip }} />
             </Paper>
             <Paper
                 component="ul"
@@ -65,9 +66,34 @@ const MovieDetails = ({ movie }) => {
                 <li>
                     <Chip label="Production Countries" sx={{ ...chip }} color="primary" />
                 </li>
-                {movie.production_countries.map((g) => (
-                    <li key={g.name}>
-                        <Chip label={g.name} sx={{ ...chip }} />
+                {movie.production_countries.map((c) => (
+                    <li key={c.name}>
+                        <Chip label={c.name} sx={{ ...chip }} />
+                    </li>
+                ))}
+            </Paper>
+            <Paper
+                component="ul"
+                sx={{ ...root }}
+            >
+                <li>
+                    <Chip label="Production Companies" sx={{ ...chip }} color="primary" />
+                </li>
+                {movie.production_companies.map((c) => (
+                    <li key={c.name}>
+                        <Chip
+                            avatar={
+                                <Avatar alt={c.name} src={`https://image.tmdb.org/t/p/w500${c.logo_path}`}
+                                    // make the logo fit inside the avatar without being cropped
+                                    sx={{
+                                        '& .MuiAvatar-img': {
+                                            objectFit: 'contain'
+                                        }
+                                    }}
+                                />
+                            }
+                            label={c.name} sx={{ ...chip }}
+                        />
                     </li>
                 ))}
             </Paper>

@@ -5,7 +5,7 @@ import Spinner from '../components/spinner';
 import AddToFavoritesButton from '../components/cardButtons/addToFavorites'
 import AddToWatchListButton from "../components/cardButtons/addToWatchList";
 
-const HomePage = (props) => {
+const HomePage = () => {
 
   const { data, error, isPending, isError } = useQuery({
     queryKey: ['discover'],

@@ -34,6 +34,10 @@ export default function MovieCard({ movie, action }) {
     movie.watchList = false
   }
 
+  const handleMediaClick = () => {
+    window.location.href = `/movies/${movie.id}/videos`;
+  }
+
   return (
     <Card>
       <CardHeader
@@ -58,12 +62,13 @@ export default function MovieCard({ movie, action }) {
         }
       />
       <CardMedia
-        sx={{ height: 500 }}
+        sx={{ height: 500, cursor: 'pointer' }}
         image={
           movie.poster_path
             ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
             : img
         }
+        onClick={handleMediaClick}
       />
       <CardContent>
         <Grid container>

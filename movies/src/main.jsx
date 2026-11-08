@@ -53,7 +53,7 @@ const App = () => {
             </Routes>
           </MoviesContextProvider>
         </BrowserRouter>
-        <ReactQueryDevtools initialIsOpen={false} />
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </ThemeProvider>
   );

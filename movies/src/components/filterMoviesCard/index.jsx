@@ -19,7 +19,8 @@ const formControl =
 {
     margin: 1,
     minWidth: "90%",
-    backgroundColor: "rgb(255, 255, 255)"
+    backgroundColor: "rgb(255, 255, 255)",
+    borderRadius: 2,
 };
 
 export default function FilterMoviesCard(props) {
@@ -46,7 +47,7 @@ export default function FilterMoviesCard(props) {
         props.onUserInput(type, value);
     };
 
-    const handleTextChange = (e, props) => {
+    const handleTextChange = (e) => {
         handleChange(e, "name", e.target.value);
     };
 
@@ -63,12 +64,12 @@ export default function FilterMoviesCard(props) {
             <CardContent>
                 <Typography variant="h5" component="h1">
                     <SearchIcon fontSize="large" />
-                    Filter the movies.
+                    Filter Movies
                 </Typography>
                 <TextField
                     sx={{ ...formControl }}
                     id="filled-search"
-                    label="Search field"
+                    label="Search"
                     type="search"
                     variant="filled"
                     value={props.titleFilter}
@@ -99,13 +100,6 @@ export default function FilterMoviesCard(props) {
                 image={img}
                 title="Filter"
             />
-            <CardContent>
-                <Typography variant="h5" component="h1">
-                    <SearchIcon fontSize="large" />
-                    Filter the movies.
-                    <br />
-                </Typography>
-            </CardContent>
         </Card>
     );
 }

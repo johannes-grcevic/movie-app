@@ -17,6 +17,7 @@ const Header = (props) => {
                 display: "flex",
                 justifyContent: "space-around",
                 flexWrap: "wrap",
+                marginTop: 1.5,
                 marginBottom: 1.5,
             }}
         >

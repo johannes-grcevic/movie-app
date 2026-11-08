@@ -17,7 +17,7 @@ import Spinner from '../spinner';
 
 const formControl =
 {
-    margin: 1,
+    margin: 1.5,
     minWidth: "90%",
     backgroundColor: "rgb(255, 255, 255)",
     borderRadius: 2,
@@ -57,9 +57,7 @@ export default function FilterMoviesCard(props) {
 
     return (
         <Card
-            sx={{
-                backgroundColor: "rgb(204, 204, 0)"
-            }}
+            sx={{ backgroundColor: "primary.main" }}
             variant="outlined">
             <CardContent>
                 <Typography variant="h5" component="h1">
@@ -77,7 +75,7 @@ export default function FilterMoviesCard(props) {
                 />
 
                 <FormControl sx={{ ...formControl }}>
-                    <InputLabel id="genre-label">Genre</InputLabel>
+                    <InputLabel id="genre-label" sx={{ color: 'text.primary', margin: "-6px -10px" }}>Genre</InputLabel>
                     <Select
                         labelId="genre-label"
                         id="genre-select"

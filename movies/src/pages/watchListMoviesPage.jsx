@@ -4,7 +4,7 @@ import { MoviesContext } from "../contexts/moviesContext";
 import { useQueries } from "@tanstack/react-query";
 import { getMovie } from "../api/tmdb-api";
 import Spinner from '../components/spinner'
-import RemoveFromWatchListIcon from "../components/cardIcons/removeFromWatchList";
+import RemoveFromWatchListButton from "../components/cardButtons/removeFromWatchList";
 
 const WatchListMoviesPage = () => {
   const { watchList: movieIds } = useContext(MoviesContext);
@@ -38,7 +38,7 @@ const WatchListMoviesPage = () => {
       action={(movie) => {
         return (
           <>
-            <RemoveFromWatchListIcon movie={movie} />
+            <RemoveFromWatchListButton movie={movie} />
           </>
         );
       }}

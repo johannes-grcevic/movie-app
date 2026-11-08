@@ -3,7 +3,7 @@ import { MoviesContext } from "../../contexts/moviesContext";
 import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
-const AddToFavoritesIcon = ({ movie }) => {
+const AddToFavoritesButton = ({ movie }) => {
     const context = useContext(MoviesContext);
 
     const handleAddToFavorites = (e) => {
@@ -18,4 +18,4 @@ const AddToFavoritesIcon = ({ movie }) => {
     );
 };
 
-export default AddToFavoritesIcon;
+export default AddToFavoritesButton;

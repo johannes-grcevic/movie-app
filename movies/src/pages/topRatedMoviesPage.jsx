@@ -3,7 +3,7 @@ import PageTemplate from '../components/templateMovieListPage'
 import { getTopRatedMovies } from "../api/tmdb-api";
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/spinner';
-import AddToWatchListIcon from "../components/cardIcons/addToWatchList";
+import AddToWatchListButton from "../components/cardButtons/addToWatchList";
 
 const TopRatedMoviesPage = () => {
     const { data, error, isPending, isError } = useQuery({
@@ -28,7 +28,7 @@ const TopRatedMoviesPage = () => {
             title="Top Rated Movies"
             movies={movies}
             action={(movie) => {
-                return <AddToWatchListIcon movie={movie} />
+                return <AddToWatchListButton movie={movie} />
             }}
         />
     );

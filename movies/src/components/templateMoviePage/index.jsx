@@ -1,4 +1,3 @@
-import React from "react";
 import MovieHeader from "../headerMovie";
 import Grid from "@mui/material/Grid";
 import ImageList from "@mui/material/ImageList";
@@ -21,7 +20,7 @@ const TemplateMoviePage = ({ movie, children }) => {
     return <h1>{error.message}</h1>;
   }
 
-  const images = data.posters
+  const images = data.posters.slice(0, 5); // Limit to 5 images
 
   return (
     <>
